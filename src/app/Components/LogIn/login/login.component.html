@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="welcome">
+        <div class="pinkbox" #pinkbox>
+            <div class="signup nodisplay" #signup>
+                <h1>register</h1>
+                <form [formGroup]="userForm" (ngSubmit)="RegisterNew()" autocomplete="off">
+                    <input type="text" placeholder="User Name" formControlName="UserName" required>
+                    <div *ngIf="userForm.get('UserName')?.invalid && (userForm.get('UserName')?.dirty || userForm.get('UserName')?.touched)">
+                      <small>{{getErrorMessage('UserName')}}</small>
+                   </div>
+                  
+                    <input type="email" placeholder="Email" formControlName="EmailAddress" required>
+                    <div *ngIf="userForm.get('EmailAddress')?.invalid && (userForm.get('EmailAddress')?.dirty || userForm.get('EmailAddress')?.touched)">
+                        <small>{{getErrorMessage('EmailAddress')}}</small>
+                    </div>
+                  
+                    <input type="text" placeholder="Phone Number" formControlName="PhoneNumber" required>
+                    <div *ngIf="userForm.get('PhoneNumber')?.invalid && (userForm.get('PhoneNumber')?.dirty || userForm.get('PhoneNumber')?.touched)">
+                        <small>{{getErrorMessage('PhoneNumber')}}</small>
+                    </div>
+                  
+                    <input type="password" placeholder="Password" formControlName="Password" required>
+                    <div *ngIf="userForm.get('Password')?.invalid && (userForm.get('Password')?.dirty || userForm.get('Password')?.touched)">
+                        <small>{{getErrorMessage('Password')}}</small>
+                      </div>
+                      
+                  
+                    <input type="password" placeholder="Confirm Password" formControlName="ConfirmPassword" required>
+                    <div *ngIf="userForm.hasError('mismatch') && (userForm.get('ConfirmPassword')?.dirty || userForm.get('ConfirmPassword')?.touched)">
+                        <small>{{getErrorMessage('ConfirmPassword')}}</small>
+                    </div>
+                  
+                    <button class="button submit" type="submit" [disabled]="userForm.invalid">Create Account</button>
+                  </form>
+                  
+
+            </div>
+            <div class="signin" #signin>
+                <h1 *ngIf="!forgotPasswordMode">Sign In</h1>
+                <h1 *ngIf="forgotPasswordMode">Reset Password</h1>
+            
+                <!-- Login Form -->
+                <form *ngIf="!forgotPasswordMode" [formGroup]="loginForm" (ngSubmit)="Login()" class="more-padding" autocomplete="off">
+                    <input type="text" placeholder="Email" formControlName="username">
+                    <input type="password" placeholder="Password" formControlName="password">
+                    
+                    <div class="checkbox">
+                        <input type="checkbox" formControlName="remember" id="remember" />
+                        <label for="remember">Remember me</label>
+                    </div>
+            
+                    <button class="button submit" type="submit">Login</button>
+                    <p (click)="toggleForgotPassword()" class="forgot-password">Forgot your password?</p>
+                </form>
+            
+                <!-- Forgot Password Form -->
+                <form *ngIf="forgotPasswordMode" [formGroup]="forgotPasswordForm" (ngSubmit)="ResetPassword()" class="more-padding" autocomplete="off">
+                    <input type="email" placeholder="Email" formControlName="email" required>
+                    <input type="password" placeholder="New Password" formControlName="newPassword" required>
+                    <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" required>
+            
+                    <small *ngIf="forgotPasswordForm.hasError('passwordMismatch')">Passwords do not match.</small>
+            
+                    <button class="button submit" type="submit">Reset Password</button>
+                    <p (click)="toggleForgotPassword()" class="back-to-login">Back to Login</p>
+                </form>
+            </div>
+            
+        </div>
+        <div class="leftbox">
+            <h2 class="title"><span>SR Software</span><br>
+                Solutions</h2>
+            <p class="desc"> The best couching center.</p>
+            <img class="logosr"
+                src="https://i.ibb.co/ZTsk20b/Whats-App-Image-2024-02-24-at-3-19-23-PM-removebg-preview.png"
+                alt="Whats-App-Image-2024-02-24-at-3-19-23-PM-removebg-preview" border="0">
+            <p class="account">have an account?</p>
+            <button class="button" id="signin" (click)="onSigninClick()">Sign In</button>
+        </div>
+        <div class="rightbox">
+            <h2 class="title"><span>SR Software</span><br>
+                Solutions</h2>
+            <p class="desc"> The best couching center.</p>
+            <img class="logosr"
+                src="https://i.ibb.co/ZTsk20b/Whats-App-Image-2024-02-24-at-3-19-23-PM-removebg-preview.png"
+                alt="Whats-App-Image-2024-02-24-at-3-19-23-PM-removebg-preview" border="0">
+            <p class="account">don't have an account?</p>
+            <button class="button" id="signup" (click)="onSignupClick()">Sign Up</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "SignUp": [
+    {
+      "UserName": "John",
+      "EmailAddress": "john@example.com",
+      "PhoneNumber": "8978923412",
+      "Password": "sAi@12",
+      "id": "c10e"
+    },
+    {
+      "id": "645c",
+      "UserName": "SaiReddy",
+      "EmailAddress": "sai@gmail.com",
+      "PhoneNumber": "9892383834",
+      "Password": "saiA@123"
+    },
+    {
+      "id": "4fb4",
+      "UserName": "Ram",
+      "EmailAddress": "ramu@gmail.com",
+      "PhoneNumber": "9898293423",
+      "Password": "aRam@123"
+    }
+  ],
+  "Pages": {}
+}
