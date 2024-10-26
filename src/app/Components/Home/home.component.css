@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    line-height: 1.6;
+    background-size: cover;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #1976d2; /* Angular Material Primary Color */
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #fff;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: -10rem;
+}
+
+.username {
+    margin-right: 20px;
+    font-weight: 600;
+    color: #FFF;
+}
+
+#logout {
+    border: none;
+    color: white !important;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#logout:hover{
+    background-color: #FFF; /* Darker Red */
+    border-radius: 50%;    
+    transition: background-color 0.3s ease;    
+}
+#logout:hover  .icon{
+    color: #1976d2 !important; /* Darker Red */
+      
+}
+
+.content-container {
+    margin-top: 230px; /* Space for fixed navbar */
+    flex: 1; /* Allow it to grow and fill available space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px;
+}
+
+.content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #1976d2; /* Match header color */
+    padding: 10px 20px; /* Reduced padding for a smaller footer */
+    display: flex; /* Use flexbox to arrange items */
+    justify-content: space-between; /* Distributes space between elements */
+    align-items: center; /* Vertically center items */
+    position: fixed; /* Make the footer fixed */
+    bottom: 0; /* Align to the bottom of the page */
+    left: 0;
+    right: 0;
+}
+
+.rights-text {
+    margin: 0; /* Remove margin to center text */
+    text-align: center; 
+    flex-grow: 1; /* Allow the text to grow */
+    color: #FFF;
+}
+
+.social-media {
+    display: flex; /* Use flexbox to arrange icons */
+    gap: 10px; /* Space between icons */
+}
+
+.social-media a {
+    color: #ffffff; /* White color for icons */
+    font-size: 1.5rem; /* Icon size */
+    text-decoration: none; /* Remove underline */
+}
+
+.social-media a:hover {
+    color: #e3f2fd; /* Lighter shade on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-right {
+        margin-top: 10px;
+    }
+}

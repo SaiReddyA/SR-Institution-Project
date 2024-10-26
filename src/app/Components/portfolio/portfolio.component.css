@@ -1,0 +1,14 @@
+/* home.component.css */
+.iframe-container {
+    width: 100%;
+    height: 100vh; /* Full height */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove default border */
+    display: block; /* Block element */
+  }
+  
